@@ -1,4 +1,10 @@
+import 'package:csci380project/test/dbtestpage.dart';
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+
+import 'database/database.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +32,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: DatabaseTestPage(),
     );
   }
 }
