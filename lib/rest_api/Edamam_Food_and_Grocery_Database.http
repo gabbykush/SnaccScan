@@ -1,0 +1,9 @@
+GET /parser?ingr=apple HTTP/1.1
+
+X-Rapidapi-Key: c8020b0493msh924c70201e1450ap1b6736jsnab38a50cf69f
+
+X-Rapidapi-Host: edamam-food-and-grocery-database.p.rapidapi.com
+
+Host: edamam-food-and-grocery-database.p.rapidapi.com
+
+
