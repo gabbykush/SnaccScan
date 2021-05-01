@@ -81,7 +81,7 @@ class NutrientList {
         FOLDFE: json['hints'][0]['food']['nutrients']['FOLDFE'] ?? -1,
         MG: json['hints'][0]['food']['nutrients']['MG'] ?? -1,
         NIA: json['hints'][0]['food']['nutrients']['NIA'] ?? -1,
-        P: json['hints'][0]['food']['nutrients']['P'],
+        P: json['hints'][0]['food']['nutrients']['P'] ?? -1,
         RIBF: json['hints'][0]['food']['nutrients']['RIBF'] ?? -1,
         THIA: json['hints'][0]['food']['nutrients']['THIA'] ?? -1,
         TOCPHA: json['hints'][0]['food']['nutrients']['TOCPHA'] ?? -1,
@@ -93,32 +93,64 @@ class NutrientList {
   }
 }
 
-class Store {
-  final String name;
-  final String rating;
-  final String link;
-  final String basePrice;
-  final String shipping;
-  final String tax;
-  final String totalPrice;
+var NutrientUnit = {
+  'ENERC_KCAL': 'kcal',
+  'FAT': 'g',
+  'FASAT': 'g',
+  'FATRN': 'g',
+  'FAMS': 'g',
+  'FAPU': 'g',
+  'CHOCDF': 'g',
+  'FIBTG': 'g',
+  'SUGAR': 'g',
+  'PROCNT': 'g',
+  'CHOLE': 'mg',
+  'NA': 'mg',
+  'CA': 'mg',
+  'K': 'mg',
+  'FE': 'mg',
+  'VITC': 'mg',
+  'FOLDFE': 'aeg',
+  'MG': 'mg',
+  'NIA': 'mg',
+  'P': 'mg',
+  'RIBF': 'mg',
+  'THIA': 'mg',
+  'TOCPHA': 'aeg',
+  'VITA_RAE': 'aeg',
+  'VITB12': 'aeg',
+  'VITB6A': 'mg',
+  'VITD': 'aeg',
+  'VITK1': 'aeg',
+};
 
-  Store(
-      {@required this.name,
-      @required this.rating,
-      @required this.link,
-      @required this.basePrice,
-      @required this.shipping,
-      @required this.tax,
-      @required this.totalPrice});
-
-  factory Store.fromJson(Map<String, dynamic> json) {
-    return Store(
-        name: json['name'],
-        rating: json['rating'],
-        link: json['link'],
-        basePrice: json['base_price'],
-        shipping: json['additional_price']['shipping'],
-        tax: json['additional_price']['tax'],
-        totalPrice: json['total_price']);
-  }
-}
+var NutrientName = {
+  'ENERC_KCAL': 'Energy',
+  'FAT': 'Total Fat',
+  'FASAT': 'Saturated Fat',
+  'FATRN': 'Trans Fat',
+  'FAMS': 'Monounsaturated Fat',
+  'FAPU': 'Polyunsaturated Fat',
+  'CHOCDF': 'Carbs',
+  'FIBTG': 'Fiber',
+  'SUGAR': 'Sugar',
+  'PROCNT': 'Protien',
+  'CHOLE': 'Cholesterol',
+  'NA': 'Sodium',
+  'CA': 'Calcium',
+  'K': 'Potassium',
+  'FE': 'Iron',
+  'VITC': 'Vitamin C',
+  'FOLDFE': 'Folate',
+  'MG': 'Magnesium',
+  'NIA': 'Niacin',
+  'P': 'Phosphorus',
+  'RIBF': 'Ribofalvin',
+  'THIA': 'Thamin',
+  'TOCPHA': 'Vitamin E',
+  'VITA_RAE': 'Vitamin A',
+  'VITB12': 'Vitamin B12',
+  'VITB6A': 'Vitamin B6',
+  'VITD': 'Vitamin D',
+  'VITK1': 'Vitamin K',
+};

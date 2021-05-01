@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:ffi';
 
-import 'package:csci380project/resources/customclasses.dart';
+import 'package:csci380project/resources/nutrientlist.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
