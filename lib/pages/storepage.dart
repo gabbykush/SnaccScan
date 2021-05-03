@@ -4,25 +4,25 @@ import 'package:csci380project/widgets/storecontainer.dart';
 import 'package:flutter/material.dart';
 
 class StorePage extends StatefulWidget {
-  final String upc;
-
-  StorePage({Key key, @required this.upc}) : super(key: key);
   @override
   _StorePageState createState() => _StorePageState();
 }
 
 class _StorePageState extends State<StorePage> {
   Future<List<Store>> storeList;
+  String upc;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    storeList = getStores(widget.upc);
   }
 
   @override
   Widget build(BuildContext context) {
+    upc = ModalRoute.of(context).settings.arguments as String;
+    storeList = getStores(upc);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Stores'),
@@ -31,6 +31,20 @@ class _StorePageState extends State<StorePage> {
         future: storeList,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+            if (snapshot.data.length == 0) {
+              return Column(
+                children: [
+                  Text('Could not find stores'),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          storeList = getStores(upc);
+                        });
+                      },
+                      child: Text('Refresh'))
+                ],
+              );
+            }
             return ListView.separated(
               separatorBuilder: (context, index) => const Divider(),
               padding: const EdgeInsets.all(5),

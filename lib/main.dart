@@ -1,4 +1,5 @@
 import 'package:csci380project/pages/homepage.dart';
+import 'package:csci380project/resources/routes.dart';
 //import 'package:csci380project/rest_api/pythonconnect.dart';
 import 'package:csci380project/rest_api/rest_api.dart';
 import 'package:csci380project/rest_api/serpapi.dart';
@@ -22,11 +23,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      routes: Routes.getRoutes(),
       theme: ThemeData(
         primaryColor: Colors.green[700],
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        canvasColor: Colors.green[100],
+        canvasColor: Color.fromARGB(255, 191, 235, 186),
         elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(Colors.green[700]),
+          ),
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
             style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.green[700]),
         )),

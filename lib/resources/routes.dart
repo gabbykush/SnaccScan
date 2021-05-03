@@ -1,6 +1,7 @@
 import 'package:csci380project/pages/foodhistorypage.dart';
 import 'package:csci380project/pages/homepage.dart';
 import 'package:csci380project/pages/nutritionalpage.dart';
+import 'package:csci380project/pages/storepage.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 
@@ -9,12 +10,14 @@ class Routes {
   static const String homePage = '/homepage';
   static const String foodHistoryPage = '/foodhistorypage';
   static const String nutritionalPage = '/nutritionalpage';
+  static const String storePage = '/storepage';
 
   static Map<String, WidgetBuilder> getRoutes() {
     return {
       homePage: (context) => HomePage(),
       foodHistoryPage: (context) => FoodHistoryPage(),
-      nutritionalPage: (context) => NutritionalPage()
+      nutritionalPage: (context) => NutritionalPage(),
+      storePage: (context) => StorePage(),
     };
   }
 }
