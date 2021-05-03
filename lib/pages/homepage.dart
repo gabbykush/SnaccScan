@@ -13,50 +13,56 @@ class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Snacc Scan'),
-          backgroundColor: Colors.green[700],
-        ),
+        // appBar: AppBar(
+        //   title: Text('Snacc Scan'),
+        //   backgroundColor: Colors.green[700],
+        // ),
         body: Center(
             child: Column(children: <Widget>[
-          Container(
-              height: 200,
-              width: 200,
-              child: Image.asset('lib/assets/applogo.png')),
-          Container(
-            margin: EdgeInsets.all(25.0),
-            child: OutlinedButton(
-              child: Text(
-                "Scan New Barcode",
-                style: TextStyle(fontSize: 20.0),
-              ),
-              style: OutlinedButton.styleFrom(
-                primary: Colors.white,
-                backgroundColor: Colors.teal,
-              ),
-              onPressed: () async {
-                upc = (await BarcodeScanner.scan()) as ScanResult;
-                setState(() {});
-              },
-            ),
+      Container(
+          height: 200,
+          width: 200,
+          child: Image.asset('lib/assets/applogo.png')),
+      Container(
+        child: Text(
+          'SnaccScan',
+          style: TextStyle(fontFamily: 'Lobster', fontSize: 40),
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.all(20.0),
+        child: OutlinedButton(
+          child: Text(
+            "Scan New Barcode",
+            style: TextStyle(fontSize: 20.0),
           ),
-          Container(
-            margin: EdgeInsets.all(25.0),
-            child: OutlinedButton(
-              child: Text(
-                "History of Products",
-                style: TextStyle(fontSize: 20.0),
-              ),
-              style: OutlinedButton.styleFrom(
-                primary: Colors.white,
-                backgroundColor: Colors.teal,
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, Routes.storePage,
-                    arguments: '044000031114');
-              },
-            ),
-          )
-        ])));
+          style: OutlinedButton.styleFrom(
+            primary: Colors.white,
+            //backgroundColor: Colors.teal,
+          ),
+          onPressed: () async {
+            upc = (await BarcodeScanner.scan()) as ScanResult;
+            setState(() {});
+          },
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.all(20.0),
+        child: OutlinedButton(
+          child: Text(
+            "History of Products",
+            style: TextStyle(fontSize: 20.0),
+          ),
+          style: OutlinedButton.styleFrom(
+            primary: Colors.white,
+            // backgroundColor: Colors.teal,
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, Routes.storePage,
+                arguments: '044000031114');
+          },
+        ),
+      )
+    ])));
   }
 }

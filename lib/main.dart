@@ -37,6 +37,8 @@ class MyApp extends StatelessWidget {
         outlinedButtonTheme: OutlinedButtonThemeData(
             style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.green[700]),
+          minimumSize:
+              MaterialStateProperty.resolveWith((states) => Size(200, 100)),
         )),
       ),
       home: HomePage(),

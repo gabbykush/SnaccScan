@@ -54,6 +54,11 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - lib/assets/applogo.png
+  fonts:
+    - family: Lobster
+      fonts:
+        - asset: lib/assets/Lobster-Regular.ttf
+       
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
