@@ -11,7 +11,7 @@ String clientToJson(FoodProduct data) {
 }
 
 class FoodProduct {
-  final int upc;
+  final String upc;
   final String productName;
 
   FoodProduct({this.upc, this.productName});
@@ -25,6 +25,6 @@ class FoodProduct {
 
   factory FoodProduct.fromMap(Map<String, dynamic> json) => new FoodProduct(
         upc: json["universal_product_code"],
-        productName: json["Product_Name"],
+        productName: json["product_name"],
       );
 }

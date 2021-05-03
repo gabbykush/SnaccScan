@@ -8,7 +8,7 @@ class FoodDatabase {
   static final FoodDatabase db = FoodDatabase._();
 
   final String createTable = 'CREATE TABLE Food_Product (' +
-      'universal_product_code INTEGER PRIMARY KEY, ' +
+      'universal_product_code TEXT PRIMARY KEY, ' +
       'product_name TEXT' +
       ')';
 
@@ -50,7 +50,7 @@ class FoodDatabase {
     });
   }
 
-  getFood(int upc) async {
+  Future<FoodProduct> getFood(String upc) async {
     final Database db = await database;
 
     var res = await db.query("Food_Product",
@@ -58,7 +58,7 @@ class FoodDatabase {
     return res.isNotEmpty ? FoodProduct.fromMap(res.first) : -1;
   }
 
-  deleteFood(int upc) async {
+  deleteFood(String upc) async {
     final Database db = await database;
     db.delete("Food_Product",
         where: "universal_product_code = ?", whereArgs: [upc]);
