@@ -1,9 +1,10 @@
 import 'package:csci380project/pages/homepage.dart';
-import 'package:csci380project/rest_api/pythonconnect.dart';
+//import 'package:csci380project/rest_api/pythonconnect.dart';
 import 'package:csci380project/rest_api/rest_api.dart';
 import 'package:csci380project/rest_api/serpapi.dart';
 import 'package:csci380project/test/dbtestpage.dart';
-import 'package:csci380project/test/testpages.dart';
+import 'package:csci380project/test/scannertestpage.dart';
+//import 'package:csci380project/test/testpages.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:path/path.dart';
