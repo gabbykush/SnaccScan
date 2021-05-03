@@ -17,7 +17,7 @@ class _ScannerTestPageState extends State<ScannerTestPage> {
           height: 500,
           child: Column(
             children: [
-              Text(upc.rawContent ?? 'Click Scan'),
+              Text(upc?.rawContent ?? 'Click Scan'),
               ElevatedButton(
                   onPressed: () async {
                     upc = await BarcodeScanner.scan();
