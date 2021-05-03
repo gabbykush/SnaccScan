@@ -52,13 +52,11 @@ class StoreContainer extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(
-            child: ElevatedButton(
-                onPressed: () async {
-                  launch(store.link);
-                },
-                child: Text('Visit Site')),
-          )
+          ElevatedButton(
+              onPressed: () async {
+                launch(store.link);
+              },
+              child: Text('Visit Site'))
         ],
       ),
     );

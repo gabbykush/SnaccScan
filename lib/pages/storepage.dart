@@ -36,7 +36,9 @@ class _StorePageState extends State<StorePage> {
               padding: const EdgeInsets.all(5),
               itemCount: snapshot.data.length,
               itemBuilder: (context, int index) {
-                return StoreContainer(store: snapshot.data[index]);
+                Store store = snapshot.data[index];
+                if (store.basePrice != null)
+                  return StoreContainer(store: snapshot.data[index]);
               },
             );
           } else if (snapshot.hasError) return Text("${snapshot.error}");

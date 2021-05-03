@@ -26,8 +26,7 @@ Future<List<Store>> getStores(String upc) async {
     //   storeList.add(Store.fromJson(jsonDecode(response.body), i));
     // }
     // return storeList;
-    Iterable l =
-        json.decode(response.body)['sellers_results']['online_sellers'];
+    Iterable l = jsonDecode(response.body)['sellers_results']['online_sellers'];
     List<Store> storeList =
         List<Store>.from(l.map((model) => Store.fromJson(model)));
     return storeList;
@@ -38,7 +37,7 @@ Future<List<Store>> getStores(String upc) async {
 Future<String> getProductId(String upc) async {
   final loc = "New+York";
   final String host =
-      "https://serpapi.com/search.json?q=$upc&tbm=shop&hl=en&gl=us&api_key=$apiKey";
+      "https://serpapi.com/search.json?q=$upc+upc&tbm=shop&hl=en&gl=us&api_key=$apiKey";
 
   final response = await http.get(
     Uri.parse(host),
@@ -52,4 +51,6 @@ Future<String> getProductId(String upc) async {
 
 //https://serpapi.com/search.json?engine=google_product&product_id=3352396703961210433&offers=1&gl=us&hl=en&api_key=94621f137b7cd96a1d3cd6fa3e283f19d0f5b3b9cc222e6b9f0d0135471557e6
 
-//https://serpapi.com/search.json?q=044000031114&tbm=shop&hl=en&gl=us&api_key=94621f137b7cd96a1d3cd6fa3e283f19d0f5b3b9cc222e6b9f0d0135471557e6
+//https://serpapi.com/search.json?q=051000000118&loc=New+York&tbm=shop&hl=en&gl=us&api_key=94621f137b7cd96a1d3cd6fa3e283f19d0f5b3b9cc222e6b9f0d0135471557e6
+
+//https://serpapi.com/search.json?engine=google_product&product_id=3352396703961210433&offers=1&gl=us&hl=en&api_key=94621f137b7cd96a1d3cd6fa3e283f19d0f5b3b9cc222e6b9f0d0135471557e6

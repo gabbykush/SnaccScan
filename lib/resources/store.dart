@@ -24,8 +24,8 @@ class Store {
         rating: json['rating'],
         link: json['link'],
         basePrice: json['base_price'],
-        shipping: json['additional_price']['shipping'],
-        tax: json['additional_price']['tax'],
-        totalPrice: json['total_price']);
+        shipping: '0', //json['additional_price']['shipping'],
+        tax: '0', //json['additional_price']['tax'],
+        totalPrice: '0'); //json['total_price']);
   }
 }
