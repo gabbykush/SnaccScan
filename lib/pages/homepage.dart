@@ -1,6 +1,10 @@
 import 'package:barcode_scan/barcode_scan.dart';
+import 'package:csci380project/database/FoodProduct.dart';
+import 'package:csci380project/database/database.dart';
 import 'package:csci380project/resources/routes.dart';
+import 'package:csci380project/rest_api/rest_api.dart';
 import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,7 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
-  ScanResult upc;
+  String upc;
+  String name;
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +46,14 @@ class _HomePage extends State<HomePage> {
             //backgroundColor: Colors.teal,
           ),
           onPressed: () async {
-            upc = (await BarcodeScanner.scan()) as ScanResult;
-            setState(() {});
+            ScanResult barcodeScan = await BarcodeScanner.scan();
+            upc = barcodeScan.rawContent.toString();
+            name = await getName(upc);
+            FoodProduct foodProduct =
+                new FoodProduct(upc: upc, productName: name);
+            await FoodDatabase.db.insertFood(foodProduct);
+            Navigator.pushNamed(context, Routes.nutritionalPage,
+                arguments: upc);
           },
         ),
       ),
@@ -58,7 +69,8 @@ class _HomePage extends State<HomePage> {
             // backgroundColor: Colors.teal,
           ),
           onPressed: () {
-            Navigator.pushNamed(context, Routes.storePage,
+            //Navigator.pushNamed(context, Routes.foodHistoryPage);
+            Navigator.pushNamed(context, Routes.foodHistoryPage,
                 arguments: '044000031114');
           },
         ),
