@@ -91,6 +91,39 @@ class NutrientList {
         VITD: json['hints'][0]['food']['nutrients']['VITD'] ?? -1,
         VITK1: json['hints'][0]['food']['nutrients']['VITK1'] ?? -1);
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'ENERC_KCAL': ENERC_KCAL,
+      'FAT': FAT,
+      'FASAT': FASAT,
+      'FATRN': FATRN,
+      'FAMS': FAMS,
+      'FAPU': FAPU,
+      'CHOCDF': CHOCDF,
+      'FIBTG': FIBTG,
+      'SUGAR': SUGAR,
+      'PROCNT': PROCNT,
+      'CHOLE': CHOLE,
+      'NA': NA,
+      'CA': CA,
+      'K': K,
+      'FE': FE,
+      'VITC': VITC,
+      'FOLDFE': FOLDFE,
+      'MG': MG,
+      'NIA': NIA,
+      'P': P,
+      'RIBF': RIBF,
+      'THIA': THIA,
+      'TOCPHA': TOCPHA,
+      'VITA_RAE': VITA_RAE,
+      'VITB12': VITB12,
+      'VITB6A': VITB6A,
+      'VITD': VITD,
+      'VITK1': VITK1,
+    };
+  }
 }
 
 var NutrientUnit = {

@@ -29,6 +29,12 @@ Future<List<Store>> getStores(String upc) async {
     Iterable l = jsonDecode(response.body)['sellers_results']['online_sellers'];
     List<Store> storeList =
         List<Store>.from(l.map((model) => Store.fromJson(model)));
+    storeList.removeWhere((element) => element.basePrice == null);
+    List<Store> tmpList = storeList;
+    for (int i = 0; i < tmpList.length; i++)
+      storeList.removeWhere((element) =>
+          (element.name == tmpList[i].name) &&
+          (element.hashCode != tmpList[i].hashCode));
     return storeList;
   } else
     throw Exception('Failed to connect to server');
