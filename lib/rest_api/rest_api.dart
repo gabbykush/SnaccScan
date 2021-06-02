@@ -14,7 +14,7 @@ Future<NutrientList> fetchFood(String upc) async {
 
     // Send authorization headers to the backend.
     headers: {
-      'x-rapidapi-key': "c8020b0493msh924c70201e1450ap1b6736jsnab38a50cf69f",
+      
       'x-rapidapi-host': "edamam-food-and-grocery-database.p.rapidapi.com"
     },
   );
@@ -35,7 +35,7 @@ Future<String> getName(String upc) async {
 
     // Send authorization headers to the backend.
     headers: {
-      'x-rapidapi-key': "c8020b0493msh924c70201e1450ap1b6736jsnab38a50cf69f",
+      
       'x-rapidapi-host': "edamam-food-and-grocery-database.p.rapidapi.com"
     },
   );
