@@ -1,7 +1,5 @@
 GET /1492/year?fragment=true&json=true HTTP/1.1
 
-X-Rapidapi-Key: 7cc9ecf332msha6cd2cb61fa44bep1bcd12jsn0f44360f9610
-
 X-Rapidapi-Host: numbersapi.p.rapidapi.com
 
 Host: numbersapi.p.rapidapi.com
