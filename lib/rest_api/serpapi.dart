@@ -5,8 +5,6 @@ import 'package:csci380project/resources/store.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
-final String apiKey =
-    "94621f137b7cd96a1d3cd6fa3e283f19d0f5b3b9cc222e6b9f0d0135471557e6";
 
 Future<List<Store>> getStores(String upc) async {
   String productId = await getProductId(upc);
@@ -55,8 +53,5 @@ Future<String> getProductId(String upc) async {
     throw Exception('Failed to connect to server');
 }
 
-//https://serpapi.com/search.json?engine=google_product&product_id=3352396703961210433&offers=1&gl=us&hl=en&api_key=94621f137b7cd96a1d3cd6fa3e283f19d0f5b3b9cc222e6b9f0d0135471557e6
 
-//https://serpapi.com/search.json?q=051000000118&loc=New+York&tbm=shop&hl=en&gl=us&api_key=94621f137b7cd96a1d3cd6fa3e283f19d0f5b3b9cc222e6b9f0d0135471557e6
 
-//https://serpapi.com/search.json?engine=google_product&product_id=3352396703961210433&offers=1&gl=us&hl=en&api_key=94621f137b7cd96a1d3cd6fa3e283f19d0f5b3b9cc222e6b9f0d0135471557e6
